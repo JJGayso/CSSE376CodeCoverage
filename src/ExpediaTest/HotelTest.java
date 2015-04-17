@@ -48,7 +48,6 @@ public class HotelTest
 	{
 		new Hotel(-5);
 	}
-
 	
 	@Test
     public void TestThatHotelDoesGetRoomOccupantFromTheDatabase()
