@@ -107,8 +107,12 @@ public class UserTest
 	@Test
 	public void TestThatDiscountInitializes()
 	{
+		Discount anotherTarget = new Discount(0.01, 50000);
+		ServiceLocator.Instance().AddDiscount(anotherTarget);
 		Discount target = new Discount(0.01, 1);
 		ServiceLocator.Instance().AddDiscount(target);
+		Discount otherTarget = new Discount(0, 1);
+		ServiceLocator.Instance().AddDiscount(otherTarget);
 		this.target.book(new Booking[]{new Flight(StartDate, EndDate, 100), new Hotel(5), new Car(3)});
 		assertEquals(1024.65,this.target.Price(), 0.01);
 	}
